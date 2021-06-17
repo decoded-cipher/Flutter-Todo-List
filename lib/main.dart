@@ -91,14 +91,18 @@ class _MyAppState extends State<MyApp> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Make me Busy!'),
+              title: Text('Make me Busy!',
+              style: TextStyle(color: Color(0xff4AA96C),
+              )),
               content: TextField(
                 controller: _textEditingController,
                 decoration: InputDecoration(hintText: "Just fill-in here!"),
                 autofocus: true,
               ),
               actions: [
-                TextButton(onPressed: () => onAddTask(), child: Text('SCHEDULE'))
+                TextButton(onPressed: () => onAddTask(), child: Text('SCHEDULE',
+                style: TextStyle(color: Color(0xff4AA96C), fontWeight: FontWeight.bold)
+                ))
               ],
             );
           },
@@ -117,13 +121,14 @@ class EmptyList extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-              child: Icon(Icons.inbox_outlined,
-                  size: 80.0, color: Color(0xff4AA96C))),
+              child: Icon(Icons.event_busy_outlined,
+                  size: 100.0, color: Color(0xff4AA96C))),
           Container(
-            padding: EdgeInsets.only(top: 4.0),
+            padding: EdgeInsets.only(top: 5.0),
             child: Text(
               "Don't have any tasks! \nI\'m getting bored!",
-              style: TextStyle(fontSize: 20.0),
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 20.0, color: Color(0xff4AA96C)),
             ),
           )
         ],
